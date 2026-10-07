@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junte PDFs na ordem desejada com a CRP Tecnologia. Processamento local no navegador.">
+  <title>Mesclar PDF | CRP Tecnologia</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23053F88'/%3E%3Cpath d='M10 7h9l5 5v14H10z' fill='white'/%3E%3Cpath d='M7 11v16h13' fill='none' stroke='%23F6A730' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <header class="header"><div class="header-inner">
+    <img class="logo" src="./assets/crp-logo.png" alt="CRP Tecnologia" width="160" height="69">
+    <span class="header-divider"></span><span class="product-name">Ferramentas de documentos</span>
+    <span class="local-badge"><span aria-hidden="true">◈</span> Processamento local</span>
+  </div></header>
+  <main>
+    <div class="intro"><div class="eyebrow">DOCUMENTOS / MESCLAR PDF</div><h1>Um PDF. Tudo organizado.</h1><p>Adicione seus documentos, escolha a ordem e junte tudo em um único arquivo.</p></div>
+    <div class="workspace">
+      <section class="files-panel" aria-labelledby="files-title">
+        <div class="panel-heading"><div><h2 id="files-title">Seus arquivos <span id="count" class="count">0</span></h2><p>A ordem abaixo será a ordem do PDF final.</p></div><button id="add" class="button secondary" type="button"><span aria-hidden="true">＋</span> Adicionar PDFs</button></div>
+        <input id="file-input" type="file" accept=".pdf,application/pdf" multiple hidden>
+        <div id="dropzone" class="dropzone">
+          <div id="empty" class="empty">
+            <div class="file-symbol" aria-hidden="true"><svg viewBox="0 0 48 56" fill="none"><path d="M10 3h19l12 12v37H10z" stroke="currentColor" stroke-width="2"/><path d="M29 3v13h12M18 27h15M18 34h15M18 41h10" stroke="currentColor" stroke-width="2"/></svg><span>PDF</span></div>
+            <h3>Seus PDFs começam aqui</h3><p>Arraste os arquivos para esta área<br>ou selecione no seu computador.</p>
+            <button id="select" class="button primary" type="button">Selecionar PDFs</button>
+            <small>Até 50 arquivos · 100 MB no total</small>
+          </div>
+          <ol id="file-list" class="file-list" aria-label="PDFs na ordem da mesclagem"></ol>
+          <div id="drop-hint" class="drop-hint" hidden>Solte mais PDFs aqui ou use “Adicionar PDFs”.</div>
+        </div>
+        <div class="list-footer"><span id="order-help">Você pode reorganizar os arquivos após adicionar.</span><button id="clear" class="text-button" type="button" disabled>Limpar lista</button></div>
+        <div id="messages" class="message" role="alert" hidden></div>
+      </section>
+      <aside class="summary" aria-labelledby="summary-title">
+        <div class="summary-top"><span class="step-label">ARQUIVO FINAL</span><h2 id="summary-title">Pronto para mesclar</h2><p>Confira os documentos antes de gerar seu PDF.</p></div>
+        <dl class="stats"><div><dt>Arquivos</dt><dd id="total-files">0</dd></div><div><dt>Páginas</dt><dd id="total-pages">0</dd></div><div><dt>Tamanho de entrada</dt><dd id="total-size">0 KB</dd></div></dl>
+        <label class="field-label" for="output-name">Nome do arquivo final</label><div class="filename"><input id="output-name" type="text" value="documentos_mesclados" maxlength="100" autocomplete="off"><span>.pdf</span></div>
+        <button id="merge" class="button primary merge" type="button" disabled>Mesclar PDFs</button>
+        <p id="status" class="status" role="status" aria-live="polite">Adicione pelo menos 2 PDFs.</p>
+        <progress id="progress" max="100" value="0" hidden aria-label="Progresso da mesclagem"></progress>
+        <div id="success" class="success" hidden><strong>Seu PDF está pronto!</strong><p id="result-info"></p><a id="download" class="button primary" download>Baixar PDF</a><span>O download salva uma cópia no seu dispositivo.</span></div>
+        <div class="privacy"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Seus documentos ficam com você</strong><p>A mesclagem acontece no navegador. Seus PDFs não são enviados ao servidor.</p></div></div>
+      </aside>
+    </div>
+    <details class="notes"><summary>Sobre os arquivos compatíveis</summary><p>Use PDFs sem senha. Esta ferramenta une as páginas, mas não preserva marcadores, formulários editáveis ou a validade de assinaturas digitais. Para formulários, salve uma cópia preenchida como PDF antes de mesclar. Os originais não são alterados.</p></details>
+  </main>
+  <footer><span>CRP Tecnologia</span><span>Documentos organizados. Trabalho simplificado.</span></footer>
+  <noscript>Ative o JavaScript para selecionar e mesclar PDFs.</noscript>
+</body>
+</html>
