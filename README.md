@@ -1,18 +1,4 @@
-# CRP — Mesclar PDF (web)
-
-Versão web modular com a paleta da CRP Tecnologia e o logotipo fornecido.
-
-## Rodar e hospedar
-
-A pasta `dist` é o site completo. Publique seu conteúdo em uma hospedagem estática com HTTPS. Nenhum servidor Python é necessário: a mesclagem ocorre em JavaScript dentro de um Web Worker no navegador. A biblioteca pdf-lib 1.17.1 está incluída localmente com sua licença.
-
-Para testar localmente, a partir da pasta do projeto:
-
-```bash
-python -m http.server 8000 --directory dist
-```
-
-Abra http://localhost:8000. Não abra `index.html` diretamente por `file://`, pois módulos e workers precisam de um servidor HTTP.
+# CRP — Mesclar PDF
 
 ## Arquivos
 
